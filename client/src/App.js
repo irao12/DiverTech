@@ -1,12 +1,18 @@
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import Opportunities from "./pages/Opportunities";
 
 function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
 				<Routes>
-					<Route index="/" element={<h1>Home Page</h1>}></Route>
-					<Route index="opportunities"></Route>
+					<Route path="/">
+						<Route index element={<h1>Home Page</h1>}></Route>
+						<Route
+							path="/opportunities"
+							element={<Opportunities />}
+						></Route>
+					</Route>
 				</Routes>
 			</BrowserRouter>
 		</div>

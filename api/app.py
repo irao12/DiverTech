@@ -9,16 +9,15 @@ def hello():
     return "Hello World", 201
 
 
-@app.route("/listings", methods=["GET"])
-def returnListings():
+@app.route("/opportunities", methods=["GET"])
+def returnDefaultOpportunities():
     if (request.method == "GET"):
-        obtainedListings = get_default_jobs()
-        result = jsonify({'content': obtainedListings})
-        print(result)
+        obtainedOpportunities = get_default_jobs()
+        result = jsonify(obtainedOpportunities)
         return result, 201
 
 
-@app.route("/listing/search", methods=["GET"])
+@app.route("/opportunities/search", methods=["GET"])
 def returnListings():
     if (request.method == "GET"):
         data = request.json

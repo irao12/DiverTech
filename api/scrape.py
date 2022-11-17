@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
 
 
 LIST_OF_TERMS = ["gender", "sex", "women", "non-binary"]
@@ -10,6 +11,9 @@ LIST_OF_TERMS = ["gender", "sex", "women", "non-binary"]
 
 def get_jobs(search_terms):
     service = Service(executable_path="/chromedriver.exe")
+    options = Options()
+    options.add_argument('headless')
+    options.add_argument('window-size=1920x1080')
     driver = webdriver.Chrome(service=service)
     driver.maximize_window()
 
@@ -21,6 +25,8 @@ def get_jobs(search_terms):
             URL = URL + "%2B" + search_terms[i]
 
     driver.get(URL)
+    time.sleep(0.25)
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     time.sleep(0.25)
 
     num_listings_collected = 0
@@ -35,8 +41,8 @@ def get_jobs(search_terms):
     for job in jobs:
         try:
             link = job.find_element(By.CLASS_NAME, "base-card__full-link")
-            link.send_keys(Keys.ENTER)
-            time.sleep(0.1)
+            link.send_keys(Keys.RETURN)
+            time.sleep(0.25)
 
             # find the job description
             jd_element = driver.find_element(
@@ -57,9 +63,16 @@ def get_jobs(search_terms):
                 By.CSS_SELECTOR, ".base-search-card__subtitle").text
             job_company_image_href = job.find_element(
                 By.CSS_SELECTOR, ".search-entity-media img").get_attribute("src")
+            job_location = job.find_element(
+                By.CSS_SELECTOR, ".job-search-card__location").text
 
-            listingJSON = {"title": job_title, "company": job_company, "img": job_company_image_href
-                           }
+            listingJSON = {
+                "title": job_title,
+                "company": job_company,
+                "img": job_company_image_href,
+                "link": job_link,
+                "location": job_location
+            }
 
             desiredListings.append(listingJSON)
         except:
