@@ -6,16 +6,15 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
 
-LIST_OF_TERMS = ["gender", "sex", "women", "non-binary"]
+LIST_OF_TERMS = ["gender", "sex", "women", "non-binary", "equal opportunity"]
 
 
 def get_jobs(search_terms):
     service = Service(executable_path="/chromedriver.exe")
     options = Options()
-    options.add_argument('headless')
     options.add_argument('window-size=1920x1080')
-    driver = webdriver.Chrome(service=service)
-    driver.maximize_window()
+    options.add_argument('headless')
+    driver = webdriver.Chrome(service=service, options=options)
 
     URL = "https://www.linkedin.com/jobs/search?keywords="
     for i in range(len(search_terms)):
@@ -26,6 +25,7 @@ def get_jobs(search_terms):
 
     driver.get(URL)
     time.sleep(0.25)
+    driver.maximize_window()
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     time.sleep(0.25)
 
@@ -66,6 +66,7 @@ def get_jobs(search_terms):
             job_location = job.find_element(
                 By.CSS_SELECTOR, ".job-search-card__location").text
 
+            # create and return a JSON with the title, company, img url, link, and location
             listingJSON = {
                 "title": job_title,
                 "company": job_company,
