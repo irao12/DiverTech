@@ -92,7 +92,7 @@ def get_jobs_indeed(search_terms, page):
             URL += search_terms[i]
         else:
             URL = URL + "+" + search_terms[i]
-    URL = URL + "&page=" + page
+    URL = URL + "&start=" + page
 
     driver.get(URL)
     driver.maximize_window()
