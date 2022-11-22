@@ -5,9 +5,8 @@ export default function JobListing(props) {
 	return (
 		<div className="job-listing">
 			<a href={link}>
-				<h2>{title}</h2>
+				<h2>{title.substr(0, title.indexOf("- job post"))}</h2>
 				<h4>{company}</h4>
-				<img src={img} alt="logo" />
 				<h4>{location}</h4>
 			</a>
 		</div>

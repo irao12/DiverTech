@@ -5,6 +5,8 @@ import { TailSpin } from "react-loader-spinner";
 
 export default function Opportunities() {
 	const [searchQuery, setSearchQuery] = React.useState("");
+	const [previousSearch, setPreviousSearch] = React.useState("");
+	const [page, setPage] = React.useState(0);
 	const [opportunities, setOpportunities] = React.useState([]);
 	const [isLoading, setIsLoading] = React.useState(false);
 	const [completedSearch, setCompletedSearch] = React.useState(false);
@@ -17,13 +19,15 @@ export default function Opportunities() {
 		if (isLoading) return;
 		try {
 			await setIsLoading(true);
-			const response = await fetch(`/opportunities?search=`, {
+			const response = await fetch(`/opportunities?search=&page=0`, {
 				method: "GET",
 			});
 			const opportunities = await response.json();
 			setOpportunities(opportunities);
 			setIsLoading(false);
 			setCompletedSearch(true);
+			setPreviousSearch("");
+			setPage(0);
 		} catch (err) {
 			console.error(err);
 			setIsLoading(false);
@@ -38,17 +42,34 @@ export default function Opportunities() {
 			const encodedSearch = encodeURIComponent(searchQuery);
 
 			const response = await fetch(
-				`/opportunities?search=${encodedSearch}`
+				`/opportunities?search=${encodedSearch}&page=0`
 			);
 
 			const opportunities = await response.json();
 			setOpportunities(opportunities);
 			setIsLoading(false);
 			setCompletedSearch(true);
+			setPreviousSearch(searchQuery);
+			setPage(0);
 		} catch (err) {
 			console.error(err);
 			setIsLoading(false);
 		}
+	};
+
+	const getMoreOpportunities = async () => {
+		await setIsLoading(true);
+		const encodedSearch = encodeURIComponent(previousSearch);
+		const response = await fetch(
+			`/opportunities?search=${encodedSearch}&page=${page + 10}`
+		);
+		const opportunities = await response.json();
+		setOpportunities((oldOpportunities) => [
+			...oldOpportunities,
+			...opportunities,
+		]);
+		setPage((oldPage) => oldPage + 10);
+		setIsLoading(false);
 	};
 
 	return (
@@ -66,12 +87,40 @@ export default function Opportunities() {
 						></input>
 						<Button
 							text="Search"
-							handleClick={getOpportunitiesBySearch}
+							handleClick={() => {
+								setOpportunities([]);
+								getOpportunitiesBySearch();
+							}}
 						/>
 					</div>
 				</div>
 			)}
 			<section className="opportunities">
+				{!completedSearch && !isLoading && (
+					<Button
+						handleClick={() => getDefaultOpportunities()}
+						text="Find Opportunities!"
+					/>
+				)}
+
+				{opportunities.length > 0 && (
+					<div className="job-listing-container">
+						{opportunities.map((opportunity, index) => (
+							<JobListing key={index} opportunity={opportunity} />
+						))}
+						{!isLoading && (
+							<Button
+								text="Find More"
+								handleClick={getMoreOpportunities}
+							/>
+						)}
+					</div>
+				)}
+
+				{!isLoading &&
+					completedSearch &&
+					opportunities.length === 0 && <div>No Results</div>}
+
 				{isLoading && (
 					<>
 						<TailSpin
@@ -85,25 +134,10 @@ export default function Opportunities() {
 							visible={true}
 						/>
 						<h3>Loading </h3>
+						<p>Please Do Not Close The Generated Chrome Tab</p>
 						<p>May Take a Moment</p>
 					</>
 				)}
-				{!completedSearch && !isLoading && (
-					<Button
-						handleClick={() => getDefaultOpportunities()}
-						text="Find Opportunities!"
-					/>
-				)}
-				{opportunities.length > 0 && !isLoading && (
-					<div className="job-listing-container">
-						{opportunities.map((opportunity, index) => (
-							<JobListing key={index} opportunity={opportunity} />
-						))}
-					</div>
-				)}
-				{!isLoading &&
-					completedSearch &&
-					opportunities.length === 0 && <div>No Results</div>}
 			</section>
 		</main>
 	);
