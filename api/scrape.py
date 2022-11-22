@@ -6,13 +6,14 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
 
-LIST_OF_TERMS = ["gender", "sex", "women", "non-binary", "equal opportunity"]
+LIST_OF_TERMS = ["gender", "sex", "women",
+                 "non-binary", "equal opportunity", "race", "sexual orientation", "disability"]
 
 
 def get_jobs(search_terms):
     service = Service(executable_path="/chromedriver.exe")
     options = Options()
-    options.add_argument('window-size=1920x1080')
+    options.add_argument('window-size=1920x4000')
     options.add_argument('headless')
     driver = webdriver.Chrome(service=service, options=options)
 
@@ -21,13 +22,12 @@ def get_jobs(search_terms):
         if (i == 0):
             URL += search_terms[i]
         else:
-            URL = URL + "%2B" + search_terms[i]
+            URL = URL + "%20" + search_terms[i]
 
     driver.get(URL)
-    time.sleep(0.25)
-    driver.maximize_window()
+    time.sleep(2)
+    driver.set_window_size(1920, 3000)
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    time.sleep(0.25)
 
     desiredListings = []
 
@@ -41,7 +41,7 @@ def get_jobs(search_terms):
         try:
             link = job.find_element(By.CLASS_NAME, "base-card__full-link")
             link.send_keys(Keys.RETURN)
-            time.sleep(0.3)
+            time.sleep(0.5)
 
             # find the job description
             jd_element = driver.find_element(
