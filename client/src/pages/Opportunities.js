@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../components/Button";
 import JobListing from "../components/JobListing";
+import { TailSpin } from "react-loader-spinner";
 
 export default function Opportunities() {
 	const [searchQuery, setSearchQuery] = React.useState("");
@@ -71,7 +72,22 @@ export default function Opportunities() {
 				</div>
 			)}
 			<section className="opportunities">
-				{isLoading && "LOADING..."}
+				{isLoading && (
+					<>
+						<TailSpin
+							height="80"
+							width="80"
+							color="#2E2252"
+							ariaLabel="tail-spin-loading"
+							radius="1"
+							wrapperStyle={{}}
+							wrapperClass=""
+							visible={true}
+						/>
+						<h3>Loading </h3>
+						<p>May Take a Moment</p>
+					</>
+				)}
 				{!completedSearch && !isLoading && (
 					<Button
 						handleClick={() => getDefaultOpportunities()}

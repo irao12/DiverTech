@@ -29,7 +29,6 @@ def get_jobs(search_terms):
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     time.sleep(0.25)
 
-    num_listings_collected = 0
     desiredListings = []
 
     # collect all the job listings
@@ -42,7 +41,7 @@ def get_jobs(search_terms):
         try:
             link = job.find_element(By.CLASS_NAME, "base-card__full-link")
             link.send_keys(Keys.RETURN)
-            time.sleep(0.25)
+            time.sleep(0.3)
 
             # find the job description
             jd_element = driver.find_element(
