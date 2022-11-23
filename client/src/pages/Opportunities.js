@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../components/Button";
 import JobListing from "../components/JobListing";
 import { TailSpin } from "react-loader-spinner";
+import "./Opportunities.css"
 
 export default function Opportunities() {
 	const [searchQuery, setSearchQuery] = React.useState("");
@@ -74,13 +75,14 @@ export default function Opportunities() {
 
 	return (
 		<main className="opportunities-page">
-			<h1>
+			<h1 className="opportunities-title">
 				Find Internships from Companies Devoted to Equal Opportunities!
 			</h1>
 			{!isLoading && (
 				<div className="search">
 					<div className="search-bar">
 						<input
+						className="search-input"
 							type="text"
 							onChange={handleChange}
 							value={searchQuery}
@@ -122,7 +124,7 @@ export default function Opportunities() {
 					opportunities.length === 0 && <div>No Results</div>}
 
 				{isLoading && (
-					<>
+					<div className="loading-message">
 						<TailSpin
 							height="80"
 							width="80"
@@ -136,7 +138,7 @@ export default function Opportunities() {
 						<h3>Loading </h3>
 						<p>Please Do Not Close The Generated Chrome Tab</p>
 						<p>May Take a Moment</p>
-					</>
+				</div>
 				)}
 			</section>
 		</main>

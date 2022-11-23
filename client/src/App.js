@@ -1,5 +1,6 @@
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import Opportunities from "./pages/Opportunities";
+import "./App.css"
 
 function App() {
 	return (
