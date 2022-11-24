@@ -2,7 +2,7 @@
 
 ## Description
 
-Our project consists of a home page and an internship finder. The home page contains links to statistics about underrepresented groups in tech, and the internship finder uses both user input and our pre-set keywords to find internships on Indeed that place emphasis on underrepresented groups.
+Our project consists of a home page and an internship finder. The home page contains statistics about underrepresented groups in tech, and the internship finder uses both user input and our pre-set keywords to find internships on Indeed that place emphasis on underrepresented groups.
 
 ## Our vision
 
@@ -27,9 +27,9 @@ To run the website (frontend)
 
 ## How to use the project
 
-The first thing you will see is the homepage, which contains a navigation bar with the "Home" and "About" buttons, as well as the "Internship Finder" button in the center of the page. On the navigation bar, the "About" button takes you to a page with statistics, and the "Home" button takes you back to the first page.
+The first thing you will see is the homepage, which contains statistics about women in tech, a navigation bar with the `"Home"`, `"About"`, and `"Internships"` buttons, and the `"Internship Finder"` button at the bottom of the page. On the navigation bar, the `"About"` button takes you to a page with information about us and the project, and the `"Home"` button takes you back to the first page. Both the `"Internships"` and `"Internship Finder"` buttons take you to the internship finder.
 
-The "Internship Finder" button takes you to the internship finder, where you are prompted to either search for your desired career or click the "Find Opportunities!" button, which has "software engineer" as the default career. A new Chrome window will pop up, and the internship finder will look through the internships on Indeed for your career and our pre-set keywords. When it is finished, the Chrome window closes, and several internships with their corresponding Indeed links will appear. Clicking "Find More" will repeat this process.
+On the internship finder page, you are prompted to either search for your desired career or click the `"Find Opportunities!"` button, which has "software engineer" as the default career. A new Chrome window will pop up, and the internship finder will look through the internships on Indeed for your career and our pre-set keywords: `"gender"`, `"sex"`, `"women"`, `"non-binary"`, `"equal opportunity"`, `"race"`, `"sexual orientation"`, and `"disability"`. When it is finished, the Chrome window closes, and several internships with their corresponding Indeed links will appear. Clicking `"Find More"` will repeat this process.
 
 ## Member contributions
 
