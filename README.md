@@ -1,4 +1,4 @@
-# WICS-Hackathon-Project
+# DiverTech
 
 ## Description
 
