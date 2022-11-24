@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../components/Button";
 import JobListing from "../components/JobListing";
 import { TailSpin } from "react-loader-spinner";
-import "./Opportunities.css"
+import "./Opportunities.css";
 
 export default function Opportunities() {
 	const [searchQuery, setSearchQuery] = React.useState("");
@@ -82,9 +82,14 @@ export default function Opportunities() {
 				<div className="search">
 					<div className="search-bar">
 						<input
-						className="search-input"
+							className="search-input"
 							type="text"
 							onChange={handleChange}
+							onKeyPress={(event) => {
+								if (event.key === "Enter") {
+									getOpportunitiesBySearch();
+								}
+							}}
 							value={searchQuery}
 						></input>
 						<Button
@@ -138,7 +143,7 @@ export default function Opportunities() {
 						<h3>Loading </h3>
 						<p>Please Do Not Close The Generated Chrome Tab</p>
 						<p>May Take a Moment</p>
-				</div>
+					</div>
 				)}
 			</section>
 		</main>
