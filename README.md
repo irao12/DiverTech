@@ -13,9 +13,9 @@ The goal of our project was to create something both informative and useful for 
 
 ## How to use the project
 
-The first thing you will see is the homepage, which contains a navigation bar with the "Home" and "About" buttons, as well as the "Internship Finder" button in the center of the page. On the navigation bar, the "About" button takes you to a page with statistics, and the "Home" button takes you back to the first page. 
+The first thing you will see is the homepage, which contains a navigation bar with the "Home" and "About" buttons, as well as the "Internship Finder" button in the center of the page. On the navigation bar, the "About" button takes you to a page with statistics, and the "Home" button takes you back to the first page.
 
-The "Internship Finder" button takes you to the internship finder, where you are prompted to either search for your desired career or click the "Find Opportunities!" button, which has "software engineer" as the default career. A new Chrome window will pop up, and the internship finder will look through the internships on Indeed for your career and our pre-set keywords. When it is finished, the Chrome window closes, and several internships with their corresponding Indeed links will appear. Clicking "Find More" will repeat this process. 
+The "Internship Finder" button takes you to the internship finder, where you are prompted to either search for your desired career or click the "Find Opportunities!" button, which has "software engineer" as the default career. A new Chrome window will pop up, and the internship finder will look through the internships on Indeed for your career and our pre-set keywords. When it is finished, the Chrome window closes, and several internships with their corresponding Indeed links will appear. Clicking "Find More" will repeat this process.
 
 ## Member contributions
 
@@ -26,3 +26,25 @@ I worked on the styling for the internship finder, as well as the descriptions f
 GitHub: https://github.com/shermanto24
 <br>
 LinkedIn: https://www.linkedin.com/in/stefani-hermanto-752211221/
+
+**Ivan Rao**
+<br>
+I worked on the web scraper along with the frontend and backend of the internship finder
+<br>
+Github: https://github.com/irao12
+<br>
+LinkedIn: https://www.linkedin.com/in/ivan-rao/
+
+**Stephanie Njoku**
+<br>
+<br>
+Github:
+<br>
+LinkedIn:
+
+**Rebecca Ramsammy**
+<br>
+<br>
+Github:
+<br>
+LinkedIn:
