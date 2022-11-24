@@ -67,6 +67,5 @@ LinkedIn: https://linkedin.com/in/stephanienjoku
 **Rebecca Ramsammy**
 <br>
 I worked on some parts of the website as well as the about us section
-Github:
 <br>
-LinkedIn:
+LinkedIn: https://www.linkedin.com/in/rebecca-ramsammy-142306236/
