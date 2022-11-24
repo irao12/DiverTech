@@ -36,6 +36,10 @@ The first thing you will see is the homepage, which contains statistics about wo
 
 On the internship finder page, you are prompted to either search for your desired career or click the `"Find Opportunities!"` button, which has "software engineer" as the default career. A new Chrome window will pop up, and the internship finder will look through the internships on Indeed for your career and our pre-set keywords: `"gender"`, `"sex"`, `"women"`, `"non-binary"`, `"equal opportunity"`, `"race"`, `"sexual orientation"`, and `"disability"`. When it is finished, the Chrome window closes, and several internships with their corresponding Indeed links will appear. Clicking `"Find More"` will repeat this process.
 
+## Demo GIF
+
+<img src="./demo.gif"/>
+
 ## Member contributions
 
 **Stefani Hermanto**
@@ -58,12 +62,10 @@ LinkedIn: https://www.linkedin.com/in/ivan-rao/
 <br>
 I worked on some parts of the website (frontend) as well as the stats section
 <br>
-LinkedIn: linkedin.com/in/stephanienjoku
+LinkedIn: https://linkedin.com/in/stephanienjoku
 
 **Rebecca Ramsammy**
 <br>
+Github:
 <br>
-
--   Github:
-    <br>
--   LinkedIn:
+LinkedIn:
