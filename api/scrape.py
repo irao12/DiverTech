@@ -116,7 +116,7 @@ def get_jobs_indeed(search_terms, page):
 
             job_title = driver.find_element(
                 By.CSS_SELECTOR, ".jobsearch-JobInfoHeader-title").text
-            job_link = driver.find_element(
+            job_link = job.find_element(
                 By.CSS_SELECTOR, ".jobTitle > a").get_attribute("href")
             job_company = driver.find_element(
                 By.CSS_SELECTOR, ".jobsearch-InlineCompanyRating-companyHeader > a").text
@@ -136,6 +136,7 @@ def get_jobs_indeed(search_terms, page):
             desiredListings.append(listingJSON)
         except Exception as e:
             print(e)
+        print(desiredListings)
 
     return desiredListings
 

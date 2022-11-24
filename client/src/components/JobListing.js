@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function JobListing(props) {
-	const { company, img, title, link, location } = props.opportunity;
+	const { company, title, link, location } = props.opportunity;
 	return (
 		<div className="job-listing">
 			<a href={link} target="_blank" rel="noreferrer">
