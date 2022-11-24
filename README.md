@@ -19,7 +19,9 @@ The "Internship Finder" button takes you to the internship finder, where you are
 
 ## Member contributions
 
-Stefani Hermanto - I worked on the styling for the internship finder, as well as the descriptions for the README.
+**Stefani Hermanto**
+<br>
+I worked on the styling for the internship finder, as well as the descriptions for the README.
 <br>
 GitHub: https://github.com/shermanto24
 <br>
