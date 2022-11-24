@@ -60,12 +60,13 @@ LinkedIn: https://www.linkedin.com/in/ivan-rao/
 
 **Stephanie Njoku**
 <br>
-I worked on some parts of the website (frontend) as well as the stats section
+I worked on some parts of the website as well as the stats section
 <br>
 LinkedIn: https://linkedin.com/in/stephanienjoku
 
 **Rebecca Ramsammy**
 <br>
+I worked on some parts of the website as well as the about us section
 Github:
 <br>
 LinkedIn:
