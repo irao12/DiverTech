@@ -1,0 +1,38 @@
+.home-page {
+	height: 100%;
+	padding: 5rem 1rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+}
+
+.home-page h1 {
+	font-size: 2.4rem;
+	margin-bottom: 5rem;
+}
+
+.home-page ul {
+	list-style: none;
+	width: 90%;
+	background-color: white;
+	border-radius: 1rem;
+	padding: 1.5rem;
+}
+
+.home-page li {
+	margin-bottom: 2rem;
+	font-size: 1.2rem;
+}
+
+.emphasized-text {
+	font-weight: 900;
+	font-size: 1.6rem;
+}
+
+@media screen and (max-width: 850px) {
+	.home-page ul {
+		width: 100%;
+	}
+}

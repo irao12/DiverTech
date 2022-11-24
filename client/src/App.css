@@ -1,40 +1,44 @@
 @font-face {
-    font-family: "Quicksand";
-    src: url("./fonts/Quicksand-VariableFont_wght.ttf");
+	font-family: "Quicksand";
+	src: url("./fonts/Quicksand-VariableFont_wght.ttf");
 }
 
 @font-face {
-    font-family: "Baloo 2";
-    src: url("./fonts/Baloo2-VariableFont_wght.ttf");
+	font-family: "Baloo 2";
+	src: url("./fonts/Baloo2-VariableFont_wght.ttf");
 }
 
 :root {
-    --light-pink:#f2dfdb;
-    --dark-blue:#051621;
-    --medium-blue:#477491;
-    --medium-blue-2:#4783A0;
-    --dark-blue:#216186;
-    --dark-purple:#342026;
-    --pink:#eed9db;
+	--light-pink: #f0e5e3;
+	--dark-blue: #051621;
+	--medium-blue: #477491;
+	--medium-blue-2: #4783a0;
+	--dark-blue: #216186;
+	--dark-purple: #342026;
+	--pink: #eed9db;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
-    font-family: "Quicksand";
-    height: 100%;
+	font-family: "Quicksand";
+	height: 100%;
 }
 
 body {
-    height: 100%;
-    background-color: var(--light-pink);
+	height: 100%;
+	background-color: var(--light-pink);
+	font-family: "Quicksand";
 }
 
 #root {
-    height: 100%;
+	height: 100%;
 }
 
+.App {
+	height: 100%;
+}
