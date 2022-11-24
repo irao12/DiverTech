@@ -9,6 +9,20 @@ Our project consists of a home page and an internship finder. The home page cont
 The goal of our project was to create something both informative and useful for underrepresented groups in tech. Since most of us are part of these groups, we brainstormed what would be useful to break into the tech field from our perspectives. The informative section represents our desire to both educate others and learn more about underrepresented groups' standing in the tech field. The internship finder is meant to increase diversity in the field by helping people of these groups start their tech careers.
 
 ## How to install and run the project
+To install and run the project, you will need npm, python3, and pip installed.
+1. Clone the repository
+2. In a terminal, change the working directory to the project's directory
+
+To run the web scraper API (backend)
+1. Enter `cd api` while in the project's directory
+2. Enter the following:
+- `pip install selenium flask`
+3. To run the api, enter `python app.py` or `python3 app.py`
+
+To run the website (frontend)
+1. Open another terminal and cd in the client directory of the project (DiverTech/client)
+2. Enter `npm install` to install the dependencies
+3. After it finishes installing, enter `npm start`
 
 
 ## How to use the project
@@ -21,30 +35,30 @@ The "Internship Finder" button takes you to the internship finder, where you are
 
 **Stefani Hermanto**
 <br>
-I worked on the styling for the internship finder, as well as the descriptions for the README.
+- I worked on the styling for the internship finder, as well as the descriptions for the README.
 <br>
-GitHub: https://github.com/shermanto24
+- GitHub: https://github.com/shermanto24
 <br>
-LinkedIn: https://www.linkedin.com/in/stefani-hermanto-752211221/
+- LinkedIn: https://www.linkedin.com/in/stefani-hermanto-752211221/
 
 **Ivan Rao**
 <br>
-I worked on the web scraper along with the frontend and backend of the internship finder
+- I worked on the web scraper along with the frontend and backend of the internship finder
 <br>
-Github: https://github.com/irao12
+- Github: https://github.com/irao12
 <br>
-LinkedIn: https://www.linkedin.com/in/ivan-rao/
+- LinkedIn: https://www.linkedin.com/in/ivan-rao/
 
 **Stephanie Njoku**
 <br>
 <br>
-Github:
+- Github:
 <br>
-LinkedIn:
+- LinkedIn:
 
 **Rebecca Ramsammy**
 <br>
 <br>
-Github:
+- Github:
 <br>
-LinkedIn:
+- LinkedIn:
