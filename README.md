@@ -4,6 +4,8 @@
 
 Our project consists of a home page and an internship finder. The home page contains statistics about underrepresented groups in tech, and the internship finder uses both user input and our pre-set keywords to find internships on Indeed that place emphasis on underrepresented groups.
 
+Note: Changes in the Indeed website may potentially cause the internship finder to fail
+
 ## Our vision
 
 The goal of our project was to create something both informative and useful for underrepresented groups in tech. Since most of us are part of these groups, we brainstormed what would be useful to break into the tech field from our perspectives. The informative section represents our desire to both educate others and learn more about underrepresented groups' standing in the tech field. The internship finder is meant to increase diversity in the field by helping people of these groups start their tech careers.
